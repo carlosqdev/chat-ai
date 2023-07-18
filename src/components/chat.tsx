@@ -1,6 +1,9 @@
 "use client";
 
+import { Box } from "@chakra-ui/react";
 import { useChat } from "ai/react";
+import Prompt from "./prompt";
+import ContainerMessages from "./containerMessages";
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
@@ -8,23 +11,14 @@ export default function Chat() {
   });
 
   return (
-    <div>
-      <ul>
-        {messages.map((message) => (
-          <li key={message.id}>
-            {message.role === "user" ? "User:" : "AI:"}
-            {message.content}
-          </li>
-        ))}
-      </ul>
+    <Box as="div" border="red.300" width="100%" minHeight="100vh">
+      <ContainerMessages messages={messages} />
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Say something...
-          <input value={input} onChange={handleInputChange} />
-        </label>
-        <button type="submit">Send</button>
-      </form>
-    </div>
+      <Prompt
+        input={input}
+        handleInputChange={handleInputChange}
+        handleSubmit={handleSubmit}
+      />
+    </Box>
   );
 }
