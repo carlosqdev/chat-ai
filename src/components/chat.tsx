@@ -11,14 +11,22 @@ export default function Chat() {
   });
 
   return (
-    <Box as="div" border="red.300" width="100%" minHeight="100vh">
-      <ContainerMessages messages={messages} />
+    <Box as="div" border="10px solid red" width="100%" minHeight="100vh">
+      <Box
+        width="90%"
+        margin="0 auto"
+        border="10px solid blue"
+        display="grid"
+        gap="1rem"
+      >
+        <ContainerMessages messages={messages} />
 
-      <Prompt
-        input={input}
-        handleInputChange={handleInputChange}
-        handleSubmit={handleSubmit}
-      />
+        <Prompt
+          input={input}
+          handleInputChange={handleInputChange}
+          handleSubmit={handleSubmit}
+        />
+      </Box>
     </Box>
   );
 }

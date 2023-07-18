@@ -1,7 +1,7 @@
 "use client";
 
-import { Box } from "@chakra-ui/react";
 import { ChangeEvent, FormEvent } from "react";
+import { Box, Button, Input } from "@chakra-ui/react";
 
 interface PropsPrompt {
   input: string;
@@ -17,10 +17,25 @@ export default function Prompt({
   input,
 }: PropsPrompt) {
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="inputPrompt">Say something...</label>
-      <input id="inputPrompt" value={input} onChange={handleInputChange} />
-      <button type="submit">Send</button>
-    </form>
+    <Box border="10px solid orange">
+      <form onSubmit={handleSubmit}>
+        <Input
+          placeholder="custom placeholder"
+          _placeholder={{ opacity: 1, color: "gray.500" }}
+          id="inputPrompt"
+          value={input}
+          onChange={handleInputChange}
+        />
+        <Button
+          isLoading={false}
+          loadingText="Submitting"
+          colorScheme="teal"
+          variant="outline"
+          type="submit"
+        >
+          Submit
+        </Button>
+      </form>
+    </Box>
   );
 }
