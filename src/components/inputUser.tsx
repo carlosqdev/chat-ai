@@ -3,7 +3,7 @@
 import { ChangeEvent, FormEvent } from "react";
 import { Box, Button, Input } from "@chakra-ui/react";
 
-interface PropsPrompt {
+interface PropsInputUser {
   input: string;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
   handleInputChange: (
@@ -11,11 +11,11 @@ interface PropsPrompt {
   ) => void;
 }
 
-export default function Prompt({
+export default function InputUser({
   handleInputChange,
   handleSubmit,
   input,
-}: PropsPrompt) {
+}: PropsInputUser) {
   return (
     <Box border="10px solid orange">
       <form onSubmit={handleSubmit}>
