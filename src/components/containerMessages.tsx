@@ -11,7 +11,7 @@ export default function ContainerMessages({
   messages,
 }: PropsContainerMessages) {
   return (
-    <UnorderedList border="10px solid purple">
+    <UnorderedList listStyleType="none">
       {messages.map((message) => (
         <CardMessage
           key={message.id}
