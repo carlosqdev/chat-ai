@@ -1,7 +1,7 @@
 "use client";
 
 import { ChangeEvent, FormEvent } from "react";
-import { Box, Button, Input } from "@chakra-ui/react";
+import { SendIcon } from "./icons";
 
 interface PropsInputUser {
   input: string;
@@ -9,33 +9,40 @@ interface PropsInputUser {
   handleInputChange: (
     e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
   ) => void;
+  isLoading: boolean;
 }
 
 export default function InputUser({
   handleInputChange,
   handleSubmit,
   input,
+  isLoading,
 }: PropsInputUser) {
   return (
-    <Box border="10px solid orange">
-      <form onSubmit={handleSubmit}>
-        <Input
-          placeholder="custom placeholder"
-          _placeholder={{ opacity: 1, color: "gray.500" }}
-          id="inputPrompt"
-          value={input}
-          onChange={handleInputChange}
-        />
-        <Button
-          isLoading={false}
-          loadingText="Submitting"
-          colorScheme="teal"
-          variant="outline"
-          type="submit"
-        >
-          Submit
-        </Button>
+    <section className="m-auto max-w-3xl w-full">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-row max-w-3xl m-auto mb-2 "
+      >
+        <div className="relative flex flex-col flex-grow w-full px-4 py-3 text-white border rounded-md shadow-lg bg-gptlightgray border-gray-900/50">
+          <input
+            placeholder="Send a message"
+            value={input}
+            onChange={handleInputChange}
+            className="w-full h-[24px] resize-none bg-transparent m-0 border-0 outline-none"
+          />
+
+          <button
+            className={`opacity-40 absolute p-1 rounded-md bottom-0 h-full right-2.5 ${
+              isLoading
+                ? "pointer-events-none"
+                : "hover:shadow-2xl rounded-full"
+            }`}
+          >
+            <SendIcon />
+          </button>
+        </div>
       </form>
-    </Box>
+    </section>
   );
 }

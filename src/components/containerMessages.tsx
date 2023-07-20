@@ -1,7 +1,6 @@
 import type { Message } from "ai";
 
 import CardMessage from "./cardMessage";
-import { UnorderedList } from "@chakra-ui/react";
 
 interface PropsContainerMessages {
   messages: Message[];
@@ -11,7 +10,7 @@ export default function ContainerMessages({
   messages,
 }: PropsContainerMessages) {
   return (
-    <UnorderedList listStyleType="none">
+    <ul className="no-underline">
       {messages.map((message) => (
         <CardMessage
           key={message.id}
@@ -19,6 +18,6 @@ export default function ContainerMessages({
           role={message.role}
         />
       ))}
-    </UnorderedList>
+    </ul>
   );
 }
