@@ -1,3 +1,23 @@
+export function PlusIcon() {
+  return (
+    <svg
+      stroke="currentColor"
+      fill="none"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-4 w-4"
+      height="1em"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line x1="12" y1="5" x2="12" y2="19"></line>
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+    </svg>
+  );
+}
+
 export function IconExpand() {
   return (
     <svg
@@ -7,8 +27,9 @@ export function IconExpand() {
       viewBox="0 0 24 24"
       strokeLinecap="round"
       strokeLinejoin="round"
-      height="1rem"
-      width="1rem"
+      className="h-4 w-4 text-black dark:text-white"
+      height="1em"
+      width="1em"
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
