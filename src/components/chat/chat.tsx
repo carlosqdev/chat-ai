@@ -6,12 +6,12 @@ import { useChat } from "ai/react";
 import InputUser from "../inputUser";
 import ContainerMessages from "../containerMessages";
 
-import { IconExpand } from "../icons";
+import { IconExpand, PlusIcon } from "../icons";
 
 import styles from "./chat.module.css";
 
 export default function Chat() {
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true);
 
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
     useChat({
@@ -37,10 +37,20 @@ export default function Chat() {
             : `${styles["chat-layout-sidebar"]} ${styles["chat-layout-sidebar__hidden"]}`
         }`}
       >
-        <div>
-          <button aria-label="Open sidebar" onClick={handleShowChatHistory}>
-            <IconExpand />
-          </button>
+        <div className="h-full p-2">
+          <div className="mb-1 flex flex-row gap-2">
+            <button className="flex p-3 items-center gap-3 transition-colors duration-200 text-white cursor-pointer text-sm rounded-md border border-white/20 hover:bg-gray-500/10 h-11 flex-shrink-0 flex-grow">
+              <PlusIcon />
+              New chat
+            </button>
+            <button
+              className="flex p-3 gap-3 transition-colors duration-200 text-white cursor-pointer text-sm rounded-md border border-white/20 hover:bg-gray-500/10 h-11 w-11 flex-shrink-0 items-center justify-center"
+              aria-label="Open sidebar"
+              onClick={handleShowChatHistory}
+            >
+              <IconExpand />
+            </button>
+          </div>
         </div>
       </div>
 

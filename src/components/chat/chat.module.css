@@ -19,6 +19,11 @@
 .chat-layout-sidebar {
   grid-area: sidebar;
   min-height: 100vh;
+  position: fixed;
+  left: 0;
+  max-width: 260px;
+  width: 100%;
+  background: #202123;
 }
 
 .chat-layout-sidebar__hidden {
