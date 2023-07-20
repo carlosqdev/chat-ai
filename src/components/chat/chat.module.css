@@ -1,0 +1,45 @@
+.chat-layout {
+  display: grid;
+  grid-template-areas:
+    "sidebar messages"
+    "sidebar userPrompt";
+  grid-template-rows: 1fr 192px;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+  gap: 1px;
+}
+
+.chat-layout__colapsed-sidebar {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "messages messages"
+    "userPrompt userPrompt";
+}
+
+.chat-layout-sidebar {
+  grid-area: sidebar;
+  min-height: 100vh;
+}
+
+.chat-layout-sidebar__hidden {
+  display: none;
+}
+
+.chat-layout-messages {
+  grid-area: messages;
+}
+
+.chat-layout-userPrompt {
+  grid-area: userPrompt;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: calc(100% - 260px);
+  height: 192px;
+  display: grid;
+}
+
+.chat-layout-userPrompt__fullscreen {
+  width: 100%;
+  left: 0;
+}
