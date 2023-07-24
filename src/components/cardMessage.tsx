@@ -12,7 +12,9 @@ export default function CardMessage({ content, role }: PropsCardMessage) {
     >
       <article className="flex max-w-3xl gap-4 p-6 m-auto">
         {role === "user" ? (
-          <span className="w-[40px] h=[40px] rounded-sm bg-orange-500">CQ</span>
+          <div className="bg-green-800 text-white h-[30px] w-[30px] flex place-content-center rounded-sm pt-1">
+            C
+          </div>
         ) : (
           <LogoOpenAI />
         )}
