@@ -1,5 +1,7 @@
 import type { Message } from "ai";
+
 import { LogoOpenAI } from "./icons";
+import ButtonCopyContent from "./buttonCopyContent";
 
 type PropsCardMessage = Omit<Message, "id" | "createdAt">;
 
@@ -21,6 +23,8 @@ export default function CardMessage({ content, role }: PropsCardMessage) {
         <div className="min-h-[20px] flex flex-1 flex-col items-start gap-4 whitespace-pre-wrap">
           <div className="w-full break-words prose-invert">{content}</div>
         </div>
+
+        {role !== "user" && <ButtonCopyContent content={content} />}
       </article>
     </li>
   );
