@@ -1,34 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Chat AI
 
-## Getting Started
+## Descripción
 
-First, run the development server:
+Chat AI es un proyecto inspirado en ChatGPT de OpenAI que utiliza inteligencia artificial para crear un chat interactivo. Permite a los usuarios comunicarse con una interfaz impulsada por IA y obtener respuestas automáticas.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Instalación
+
+Para instalar las dependencias necesarias, ejecuta el siguiente comando:
+
+```
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Antes de iniciar el proyecto, asegúrate de configurar una variable de entorno en un archivo `.env.local`. Crea este archivo en la raíz del proyecto y añade lo siguiente:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+OPENAI_API_KEY=tu_clave_de_api_aquí
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Reemplaza `tu_clave_de_api_aquí` con tu propia clave API proporcionada por OpenAI. Esta clave será utilizada para realizar solicitudes a la API de OpenAI.
 
-## Learn More
+## Uso
 
-To learn more about Next.js, take a look at the following resources:
+Una vez instalado y configurado el archivo `.env.local`, puedes iniciar el proyecto localmente utilizando el siguiente comando:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+pnpm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Esto iniciará la aplicación en modo de desarrollo. Puedes acceder a ella ingresando a `http://localhost:3000` en tu navegador web.
 
-## Deploy on Vercel
+## Scripts disponibles
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `dev`: Inicia la aplicación en modo de desarrollo.
+- `build`: Genera una versión optimizada del proyecto para producción.
+- `start`: Inicia la aplicación en modo de producción después de ser construida.
+- `lint`: Ejecuta ESLint para analizar y corregir problemas relacionados con el código.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Puedes ejecutar estos scripts usando el comando correspondiente precedido por "pnpm run". Por ejemplo:
+
+```
+pnpm run lint
+```
+
+## Contribución
+
+Si deseas contribuir al proyecto, te invitamos a seguir estas pautas:
+
+1. Haz un fork del repositorio.
+2. Crea una rama nueva para tus cambios:
+   ```
+   git checkout -b mi-nueva-funcionalidad
+   ```
+3. Realiza los cambios necesarios y realiza commits descriptivos.
+4. Envía tus cambios al repositorio remoto:
+   ```
+   git push origin mi-nueva-funcionalidad
+   ```
+5. Abre una solicitud pull (pull request) describiendo tus cambios e indicando cualquier información relevante.
+
+## Licencia
+
+Este proyecto se distribuye bajo la licencia MIT. Puedes encontrar más detalles en el archivo LICENSE.
