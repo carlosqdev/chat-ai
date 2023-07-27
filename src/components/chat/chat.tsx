@@ -6,9 +6,11 @@ import { useChat } from "ai/react";
 import InputUser from "../inputUser";
 import ContainerMessages from "../containerMessages";
 
-import styles from "./chat.module.css";
 import ButtonExpand from "../buttonExpand";
 import ButtonNewChat from "../buttonNewChat";
+import { updateLocalStorage } from "@/utils/updateLocalStorage";
+
+import styles from "./chat.module.css";
 
 export default function Chat() {
   const [showSidebar, setShowSidebar] = useState(true);
@@ -16,6 +18,9 @@ export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
     useChat({
       api: "/api/chat",
+      onFinish: () => {
+        updateLocalStorage(messages);
+      },
     });
 
   function handleShowChatHistory() {
