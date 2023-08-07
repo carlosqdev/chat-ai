@@ -17,7 +17,7 @@ export default function Chat() {
 
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
     useChat({
-      api: "/api/chat",
+      api: "/api/chat-cohere",
       onFinish: () => {
         updateLocalStorage(messages);
       },
