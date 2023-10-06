@@ -20,6 +20,7 @@ module.exports = {
       },
       colors: {
         gptlogo: "#10a37f",
+        gptlogoHover: "#10a38f",
         gptdarkgray: "#202123",
         gptgray: "#343541",
         gptlightgray: "#444654",

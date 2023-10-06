@@ -1,11 +1,10 @@
-import Chat from "@/components/chat/chat";
-
-export const runtime = "edge";
+import CheckUserSession from "@/components/check-user-session";
 
 export default function Home() {
   return (
-    <main className="bg-gptgray">
-      <Chat />
-    </main>
+    <>
+      <main className="flex min-h-screen"></main>
+      <CheckUserSession />
+    </>
   );
 }
