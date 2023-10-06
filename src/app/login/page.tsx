@@ -10,8 +10,8 @@ export default function Login() {
 
   return (
     <main className="grid place-content-center min-h-screen">
-      <div className="w-[90%] m-auto grid gap-4 lg:w-[60%]">
-        <header>
+      <div className="w-[90%] m-auto grid gap-4 lg:max-w-[400px] lg:w-[100%]">
+        <header className="grid gap-4">
           <h1 className="text-3xl font-bold text-center">
             Welcome to the app!
           </h1>
