@@ -13,7 +13,7 @@ export function useLogin() {
     onAuthStateChanged(auth, (userFirebase) => {
       if (userFirebase) {
         setUser(userFirebase);
-        router.push("/dash/list");
+        router.push("/account");
       } else {
         setUser(null);
       }
